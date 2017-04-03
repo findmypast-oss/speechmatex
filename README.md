@@ -55,3 +55,10 @@ iex> Speechmatex.Account.payments()
 ```
 
 ### Job
+
+## License
+
+Copyright © 2017 Findmypast
+
+Distributed under the Apache License 2.0
+
