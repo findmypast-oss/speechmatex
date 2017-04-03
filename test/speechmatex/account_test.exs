@@ -25,6 +25,22 @@ defmodule Speechmatex.AccountTest do
   end
 
   test "Get payment history" do
-    assert true
+    payments = [%{balance: -6,
+                  created_at: "Fri, 31 Mar 2017 08:54:25 GMT",
+                  description: "transcription of recording.mp3"},
+                %{balance: 1000,
+                  created_at: "Thu, 30 Mar 2017 09:54:25 GMT",
+                  description: "Purchase of credits"}]
+    expected = {:ok, payments}
+
+    stub = fn("/user/11027/payments/") ->
+      %HTTPoison.Response{status_code: 200,
+                          body: Poison.encode!(%{payments: payments})}
+    end
+    :meck.expect(Speechmatics, :get!, stub)
+
+    actual = Account.payments()
+
+    assert expected == actual
   end
 end
