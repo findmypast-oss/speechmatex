@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/findmypast-oss/speechmatex.svg?branch=master)](https://travis-ci.org/findmypast-oss/speechmatex)
 
-**TODO: Add description**
+**Speechmatics API Client written in Elixir**
 
 ## Installation
 
