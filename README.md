@@ -25,4 +25,24 @@ be found at [https://hexdocs.pm/speechmatex](https://hexdocs.pm/speechmatex).
 
 ### Account
 
+#### Get Account Details
+
+```elixir
+iex> Speechmatex.Account.details()
+{:ok, %{balance: 1920, email: "mr_test@testerson.com", id: 43641}}
+```
+
+#### Get Payments History
+
+This is a list of both payments and debits made for transcriptions.
+
+```elixir
+iex> Speechmatex.Account.payments()
+{:ok,
+ [%{balance: -6, created_at: "Fri, 31 Mar 2017 08:54:25 GMT",
+    description: "transcription_0001.m4a"},
+  %{balance: 360, created_at: "Tue, 21 Mar 2017 09:56:50 GMT",
+     description: "60 free minutes of transcription on registration"}]
+```
+
 ### Job
