@@ -23,6 +23,15 @@ be found at [https://hexdocs.pm/speechmatex](https://hexdocs.pm/speechmatex).
 
 ## Usage
 
+#### Service Status
+
+```elixir
+iex> Speechmatex.service_status()
+{:ok,
+ %{Average_Turnaround_Mins: 0, Known_Issues: false, Queue_Length_Mins: 0,
+   Status: "Good", Time_UTC: "Mon, 03 Apr 2017 15:20:02 GMT"}}
+```
+
 ### Account
 
 #### Get Account Details
