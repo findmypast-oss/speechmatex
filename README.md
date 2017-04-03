@@ -4,6 +4,8 @@
 
 **Speechmatics API Client written in Elixir**
 
+[Speechmatics API Documentation](https://app.speechmatics.com/api-details)
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
