@@ -9,8 +9,7 @@
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `speechmatex` to your list of dependencies in `mix.exs`:
+The package is available via Hex, it can be installed by adding `speechmatex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -18,9 +17,15 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/speechmatex](https://hexdocs.pm/speechmatex).
+You will also need to register with Speechmatics and add your user id and auth token to config like so:
+
+```elixir
+use Mix.Config
+
+config :speechmatex,
+  customer_id: 99012,
+  auth_token: "J4M9ho4m1IU7wFYim9QQNrVU3aUFK5v3"
+```
 
 ## Example Usage
 
