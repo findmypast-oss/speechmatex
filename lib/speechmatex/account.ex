@@ -3,7 +3,6 @@ defmodule Speechmatex.Account do
   @customer_id Application.get_env(:speechmatex, :customer_id)
 
   def details() do
-
     response_body =
       "/user/#{@customer_id}/"
       |> Speechmatics.get!
