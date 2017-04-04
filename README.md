@@ -86,6 +86,11 @@ iex> Speechmatex.Job.get_transcription(2293106)
       "time" => "14.390000"}]}}
 ```
 
+## To Do
+
+- [ ] Alignment Route
+- [ ] Handle non 200 responses from API
+
 ## License
 
 Copyright © 2017 Findmypast
