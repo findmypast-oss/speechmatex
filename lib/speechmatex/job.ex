@@ -41,8 +41,14 @@ defmodule Speechmatex.Job do
     {:ok, response_body}
   end
 
-  def retrieve_transcription(job_id) do
+  def get_transcription(job_id) do
+    response_body =
+      "/user/#{@customer_id}/jobs/#{job_id}/transcript"
+      |> Speechmatics.get!
+      |> Map.get(:body)
+      |> Poison.decode!
 
+    {:ok, response_body}
   end
 
   def list() do

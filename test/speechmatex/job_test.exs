@@ -23,6 +23,24 @@ defmodule Speechmatex.JobTest do
     assert expected == actual
   end
 
+  test "get transcription from finished job" do
+    transcription = %{"format" => "1.0",
+                      "job" => %{"id" => 2221234},
+                      "speakers" => [%{"name" => "M1"}, %{"name" => "M2"}],
+                      "words" => [%{"confidence" => "1.00", "name" => "Apple"},
+                                  %{"confidence" => "0.890", "name" => "case"}]}
+
+    stub = fn("/user/11027/jobs/2221234/transcript") ->
+      %HTTPoison.Response{status_code: 200, body: Poison.encode!(transcription)}
+    end
+    :meck.expect(Speechmatics, :get!, stub)
+
+    expected = {:ok, transcription}
+    actual = Job.get_transcription(2221234)
+
+    assert expected == actual
+  end
+
   test "check status of all jobs for an account" do
     jobs = [%{check_wait: nil,
               created_at: "Tue, 04 Apr 2017 10:23:55 GMT",
