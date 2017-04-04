@@ -6,9 +6,6 @@ defmodule Speechmatex do
       |> Speechmatics.get!
       |> Map.get(:body)
       |> Poison.decode!
-      |> Enum.reduce(%{}, fn({k, v}, acc) ->
-        Map.put(acc, String.to_atom(k), v)
-      end)
 
     {:ok, service_status}
   end

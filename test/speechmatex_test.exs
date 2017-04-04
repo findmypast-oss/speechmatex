@@ -8,11 +8,11 @@ defmodule SpeechmatexTest do
   end
 
   test "Get service status" do
-    service_status = %{Average_Turnaround_Mins: 2,
-                       Known_Issues: false,
-                       Queue_Length_Mins: 1,
-                       Status: "Good",
-                       Time_UTC: "Mon, 03 Apr 2017 15:05:01 GMT"}
+    service_status = %{"Average_Turnaround_Mins" => 2,
+                       "Known_Issues" => false,
+                       "Queue_Length_Mins" => 1,
+                       "Status" => "Good",
+                       "Time_UTC" => "Mon, 03 Apr 2017 15:05:01 GMT"}
     expected = {:ok, service_status}
 
     stub = fn("/status") ->

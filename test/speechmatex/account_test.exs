@@ -10,7 +10,9 @@ defmodule Speechmatex.AccountTest do
   end
 
   test "Get account details" do
-    user_details = %{balance: 1990, email: "test_user@test.com", id: 11027}
+    user_details = %{"balance" => 1990,
+                     "email" => "test_user@test.com",
+                     "id" => 11027}
     expected = {:ok, user_details}
 
     stub = fn("/user/11027/") ->
@@ -25,12 +27,12 @@ defmodule Speechmatex.AccountTest do
   end
 
   test "Get payment history" do
-    payments = [%{balance: -6,
-                  created_at: "Fri, 31 Mar 2017 08:54:25 GMT",
-                  description: "transcription of recording.mp3"},
-                %{balance: 1000,
-                  created_at: "Thu, 30 Mar 2017 09:54:25 GMT",
-                  description: "Purchase of credits"}]
+    payments = [%{"balance" => -6,
+                  "created_at" => "Fri, 31 Mar 2017 08:54:25 GMT",
+                  "description" => "transcription of recording.mp3"},
+                %{"balance" => 1000,
+                  "created_at" => "Thu, 30 Mar 2017 09:54:25 GMT",
+                  "description" => "Purchase of credits"}]
     expected = {:ok, payments}
 
     stub = fn("/user/11027/payments/") ->

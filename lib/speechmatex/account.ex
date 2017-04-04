@@ -8,10 +8,9 @@ defmodule Speechmatex.Account do
       |> Speechmatics.get!
       |> Map.get(:body)
       |> Poison.decode!
+      |> Map.get("user")
 
-    {:ok, %{id: response_body["user"]["id"],
-            email: response_body["user"]["email"],
-            balance: response_body["user"]["balance"]}}
+    {:ok, response_body}
   end
 
   def payments() do
@@ -20,18 +19,8 @@ defmodule Speechmatex.Account do
       |> Speechmatics.get!
       |> Map.get(:body)
       |> Poison.decode!
-
-    payments =
-      response_body
       |> Map.get("payments")
-      |> Enum.map(&payments_key_strings_to_atoms/1)
 
-    {:ok, payments}
-  end
-
-  defp payments_key_strings_to_atoms(%{"balance" => balance,
-                                       "created_at" => created_at,
-                                       "description" => description}) do
-    %{balance: balance, created_at: created_at, description: description}
+    {:ok, response_body}
   end
 end
