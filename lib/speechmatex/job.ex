@@ -48,10 +48,6 @@ defmodule Speechmatex.Job do
     {:ok, response_body}
   end
 
-  def list() do
-
-  end
-
   defp multipart_form_for_file_upload(file, language) do
     filename = Path.basename(file)
 
