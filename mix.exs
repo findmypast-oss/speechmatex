@@ -3,7 +3,7 @@ defmodule Speechmatex.Mixfile do
 
   def project do
     [app: :speechmatex,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.4",
      description: "Speechmatics API Client written in Elixir",
      build_embedded: Mix.env == :prod,

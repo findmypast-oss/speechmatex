@@ -14,7 +14,7 @@ The package is available via Hex, it can be installed by adding `speechmatex` to
 
 ```elixir
 def deps do
-  [{:speechmatex, "~> 0.1.0"}]
+  [{:speechmatex, "~> 0.1.1"}]
 end
 ```
 
