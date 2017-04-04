@@ -17,6 +17,18 @@ defmodule Speechmatex.Job do
     {:ok, response_body}
   end
 
+  def check_statuses() do
+    response_body =
+      "/user/#{@customer_id}/jobs/"
+      |> Speechmatics.get!
+      |> Map.get(:body)
+      |> Poison.decode!
+      |> Map.get("jobs")
+      |> Enum.map(fn(job) -> Enum.reduce(job, %{}, &string_keys_to_atoms/2) end)
+
+    {:ok, response_body}
+  end
+
   def check_status(job_id) do
     response_body =
       "/user/#{@customer_id}/jobs/#{job_id}/"
