@@ -22,7 +22,8 @@ defmodule Speechmatex.Mixfile do
     [{:meck, "~> 0.8.4", only: :test},
      {:httpoison, "~> 0.11.1"},
      {:poison, "~> 3.1"},
-     {:excoveralls, "~> 0.6.3", only: :test}]
+     {:excoveralls, "~> 0.6.3", only: :test},
+     {:ex_doc, "~> 0.15.0", only: :dev}]
   end
 
   defp package do

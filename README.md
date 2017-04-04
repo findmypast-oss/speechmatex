@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/findmypast-oss/speechmatex.svg?branch=master)](https://travis-ci.org/findmypast-oss/speechmatex)
 [![Coverage Status](https://coveralls.io/repos/github/findmypast-oss/speechmatex/badge.svg?branch=master)](https://coveralls.io/github/findmypast-oss/speechmatex?branch=master)
+[![Hex.pm](https://img.shields.io/hexpm/v/speechmatex.svg)](https://hex.pm/packages/speechmatex)
 
 **Speechmatics API Client written in Elixir**
 
