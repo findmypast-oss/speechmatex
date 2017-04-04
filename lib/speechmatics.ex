@@ -1,4 +1,7 @@
 defmodule Speechmatics do
+  @moduledoc """
+  Overrides HTTPoison.Base to add specifics to contacting Speechmatics API.
+  """
 
   use HTTPoison.Base
 
@@ -9,5 +12,4 @@ defmodule Speechmatics do
 
     "#{@api_v1_base_url}#{url}?auth_token=#{auth_token}"
   end
-
 end
