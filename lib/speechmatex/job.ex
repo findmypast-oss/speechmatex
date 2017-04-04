@@ -12,7 +12,6 @@ defmodule Speechmatex.Job do
       |> Speechmatics.post!(multipart_form, [], options)
       |> Map.get(:body)
       |> Poison.decode!
-      |> Enum.reduce(%{}, &string_keys_to_atoms/2)
 
     {:ok, response_body}
   end
@@ -24,7 +23,6 @@ defmodule Speechmatex.Job do
       |> Map.get(:body)
       |> Poison.decode!
       |> Map.get("jobs")
-      |> Enum.map(fn(job) -> Enum.reduce(job, %{}, &string_keys_to_atoms/2) end)
 
     {:ok, response_body}
   end
@@ -36,7 +34,6 @@ defmodule Speechmatex.Job do
       |> Map.get(:body)
       |> Poison.decode!
       |> Map.get("job")
-      |> Enum.reduce(%{}, &string_keys_to_atoms/2)
 
     {:ok, response_body}
   end
@@ -68,9 +65,5 @@ defmodule Speechmatex.Job do
         {"model", language}
       ]
     }
-  end
-
-  defp string_keys_to_atoms({key, value}, acc) do
-    Map.put(acc, String.to_atom(key), value)
   end
 end
